@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookiePaser = require("cookie-parser");
 
+
 const Blog = require("./models/blog");
 
 const userRoute = require("./routes/user");
@@ -19,7 +20,7 @@ const PORT = process.env.PORT || 8000;
 
 mongoose
   .connect(
-    process.env.MONGODB_URI
+    `${process.env.MONGODB_URI}`
   )
   .then((e) => console.log("MongoDB Connected")).catch((err)=>{
     console.log(err)
